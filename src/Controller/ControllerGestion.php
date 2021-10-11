@@ -96,7 +96,7 @@ class ControllerGestion extends abstractController
     {
         //$entityManager = $this->getDoctrine()->getManager();
         $patient = $entityManager->getRepository(Patient::class)->find(5);
-        $patient->setNom('Giorgos');
+        //$patient->setNom('Giorgos');
         $entityManager->flush();
         $patient = $entityManager->getRepository(Patient::class)->findAll();
         return $this->render('modifPatient.json.twig', ['liste' => $patient]);
@@ -111,10 +111,10 @@ class ControllerGestion extends abstractController
     {
         //$entityManager = $this->getDoctrine()->getManager();
         $adr = new Adresse();
-        $adr->setVoie('45 route des palmiers');
+ /*       $adr->setVoie('45 route des palmiers');
         $adr->setCodePostal('06100');
         $adr->setVille('Nice');
-        $adr->setId(7);
+        $adr->setId(7);*/
         $entityManager->persist($adr);
         $entityManager->flush();
         $adresse = $entityManager->getRepository(Adresse::class)->findAll();

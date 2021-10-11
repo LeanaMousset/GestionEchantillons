@@ -1,0 +1,13 @@
+{
+    "liste" : [
+        {%  for Patient in data %}
+        {
+            "Identifiant" : "{{ Adresse.adresse_id }}",
+            "Voie" : "{{ Adresse.voie }}",
+            "Code postal" : "{{ Adresse.code_postal }}",
+            "Ville" : "{{ Adresse.ville }}"
+        }
+        {% if not loop.last %}, {% endif %}
+        {% enfor %}
+    ]
+}
