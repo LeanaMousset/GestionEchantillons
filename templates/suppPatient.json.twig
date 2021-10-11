@@ -1,0 +1,13 @@
+{
+    "liste" : [
+        {%  for Patient in data %}
+        {
+            "Identifiant" : "{{ Patient.patient_id }}",
+            "Prenom" : "{{ Patient.prenom }}",
+            "Nom" : "{{ Patient.nom }}",
+            "Date de naissance" : "{{ Patient.date_naissance }}"
+        }
+        {% if not loop.last %}, {% endif %}
+        {% enfor %}
+    ]
+}

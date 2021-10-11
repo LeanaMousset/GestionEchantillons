@@ -1,0 +1,13 @@
+{
+    "data" : [
+        {%  for Echantillon in data %}
+        {
+            "Identifiant" : "{{ Echantillon.echantillon_id }}",
+            "Nombre d'échantillon" : "{{ Echantillon.nombre_echantillon }}",
+            "Type d'échantillon" : "{{ Echantillon.type_echantillon_id }}"
+        }
+        {% if not loop.last %}, {% endif %}
+        {% enfor %}
+    ]
+}
+
